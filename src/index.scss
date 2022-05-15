@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// COLOR VARIABLES
+$base-bg: #fcf5e8;
+$heading-color: #444;
+$text-color: #999;
+$primary-color: #6c63ff;
+$whitesmoke: #f4f4f4;
+$white: #fff;
+$gray: #777;
+$light-gray: #ddd;
+$highlight-color: #f60e60;
+$mild-red: #f50057;
+$mild-red-dark: #d13267;
+$pink: #ffc0cb;
+
+// BASE STYLES
+body {
+  font-family: Poppins, sans-serif;
+  margin: 0;
+  font-size: 1.1rem;
+  background: $base-bg;
+}
+
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+// LAYOUT CLASSES
+.page-title {
+  font-size: lrem;
+  color: $heading-color;
+  display: inline-block;
+}
+
+.btn {
+  cursor: pointer;
+  background: $whitesmoke;
+  padding-block: 8px;
+  padding-inline: 12px;
+  border-radius: 4px;
+  color: $primary-color;
+  font-size: 1rem;
+  border: 1px solid $primary-color;
+
+  &:hover {
+    color: $white;
+    background-color: $primary-color;
+  }
+}
+
+// FORM STYLES
+label {
+  display: block;
+  margin-block: 24px;
+  margin-inline: auto;
+
+  label span {
+    display: block;
+    margin-block-end: 6px;
+  }
+
+  input,
+  textarea {
+    padding: 8px 6px;
+    font-size: 1em;
+    color: $gray;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid $light-gray;
+    border-radius: 4px;
+  }
+
+  textarea {
+    min-height: 160px;
+  }
+
+  .error {
+    color: $mild-red;
+    background: $pink;
+    border: 1px solid $mild-red;
+    border-radius: 4px;
+    padding: 8px;
+    margin-block: 10px;
+    margin-inline: 0;
+  }
+}
