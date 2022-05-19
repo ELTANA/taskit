@@ -16,6 +16,7 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
+    "prettier/prettier": "off",
     "react/react-in-jsx-scope": "off",
     "jsx-quotes": "off",
     "no-unused-vars": "off",
