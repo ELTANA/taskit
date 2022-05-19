@@ -1,0 +1,66 @@
+// COLOR VARIABLES
+$base-bg: #fcf5e8;
+$base-bg-alt: #faebd7;
+$base-color: #6c63ff;
+$sec-bg: #d4dedd;
+$heading-color: #444;
+$text-color: #999;
+$gray: #777;
+$gray-alt: #8a8a8a;
+$mild-gray: #c9c9c9;
+$light-gray: #ddd;
+$highlight-color: #f60e60;
+$mild-red: #f50057;
+$mild-red-dark: #d13267;
+$orange-color: #ff4d00;
+$mild-color: #ff6622;
+$pink: #ffc0cb;
+$white: #fff;
+$white-alt: #fafafa;
+$whitesmoke: #f4f4f4;
+$dark: #333;
+$dark-alt: #333;
+$v-dark: #050505;
+
+.navbar {
+  width: 100%;
+  padding: 30px 0;
+  box-sizing: border-box;
+  margin-bottom: 80px;
+}
+
+.navbar ul {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  color: $heading-color;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.navbar .logo img {
+  margin-right: 10px;
+  filter: invert(25%);
+  width: 36px;
+  // margin-top: -8px;
+}
+
+.navbar a {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: $dark-alt;
+  text-decoration: none;
+  margin-right: 20px;
+  animation: all 700ms ease-in;
+
+  &:hover {
+    color: $base-color;
+  }
+}
