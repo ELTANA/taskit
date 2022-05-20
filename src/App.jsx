@@ -8,7 +8,7 @@ import './App.scss'
 import Dashboard from './pages/Dashboard/Dashboard'
 import Create from './pages/Create/Create'
 import Login from './pages/Login/Login'
-import SignUp from './pages/SignUp/SignUp'
+import Signup from './pages/Signup/Signup'
 import Projects from './pages/Projects/Projects'
 // import Navbar from './components/Navbar/Navbar'
 // import Sidebar from './components/Sidebar/Sidebar'
@@ -48,7 +48,7 @@ const App = () => {
             {/* SIGN UP PAGE */}
             <Route
               path='/signup'
-              element={!user ? <SignUp /> : <Navigate to='/' replace={true} />}
+              element={!user ? <Signup /> : <Navigate to='/' replace={true} />}
             />
           </Routes>
           {/* </article> */}

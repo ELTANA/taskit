@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useSignup } from '../../hooks/useSignup'
 
 // LOADER
@@ -44,77 +45,78 @@ const SignUp = () => {
   }
 
   return (
-    <form className='auth-form' onSubmit={handleSignUp}>
-      <h2>Sign Up</h2>
+    <main className='auth-wrapper'>
+      <form className='auth-form' onSubmit={handleSignUp}>
+        <h2>Sign Up</h2>
 
-      {error && <small className='error'>{error}</small>}
+        {error && <small className='error'>{error}</small>}
 
-      <label htmlFor='email'>
-        <span>Email</span>
-        <input
-          type='email'
-          name='email'
-          placeholder='Enter Email'
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-          required
-        />
-      </label>
+        <label htmlFor='email'>
+          <span>Email</span>
+          <input
+            type='email'
+            name='email'
+            placeholder='Enter Email'
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            required
+          />
+        </label>
 
-      <label htmlFor='password'>
-        <span>Password</span>
-        <input
-          type='password'
-          name='password'
-          placeholder='Enter Password'
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          required
-        />
-      </label>
+        <label htmlFor='password'>
+          <span>Password</span>
+          <input
+            type='password'
+            name='password'
+            placeholder='Enter Password'
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            required
+          />
+        </label>
 
-      <label htmlFor='displayName'>
-        <span>Display Name</span>
-        <input
-          type='text'
-          name='displayName'
-          placeholder='Enter Display Name'
-          onChange={(e) => setDisplayName(e.target.value)}
-          value={displayName}
-          required
-        />
-      </label>
+        <label htmlFor='displayName'>
+          <span>Display Name</span>
+          <input
+            type='text'
+            name='displayName'
+            placeholder='Enter Display Name'
+            onChange={(e) => setDisplayName(e.target.value)}
+            value={displayName}
+            required
+          />
+        </label>
 
-      <label htmlFor='avatar'>
-        <span>Profile Avatar</span>
-        <input
-          type='file'
-          name='avatar'
-          placeholder='Upload Avatar'
-          required
-          onChange={handleFileChange}
-          // value={avatar}
-          className='file-input'
-        />
-        {avatarError && <small className='error'>{avatarError}</small>}
-      </label>
+        <label htmlFor='avatar'>
+          <span>Profile Avatar</span>
+          <input
+            type='file'
+            name='avatar'
+            placeholder='Upload Avatar'
+            required
+            onChange={handleFileChange}
+            // value={avatar}
+            className='file-input'
+          />
+          {avatarError && <small className='error'>{avatarError}</small>}
+        </label>
 
-      {/* {!isPending && (
-        <button className='btn' disabled={!(email && password && displayName && avatar)}>
-          Sign Up
-        </button>
-      )} */}
+        {isPending ? (
+          <button className='btn' disabled>
+            Loading...
+          </button>
+        ) : (
+          <button className='btn' disabled={!(email && password && displayName && avatar)}>
+            Sign Up
+          </button>
+        )}
 
-      {isPending ? (
-        <button className='btn' disabled>
-          Loading...
-        </button>
-      ) : (
-        <button className='btn' disabled={!(email && password && displayName && avatar)}>
-          Sign Up
-        </button>
-      )}
-    </form>
+        <small className='small'>
+          <span>Do you have an account?</span>
+          <Link to={'/login'}>Log In</Link>
+        </small>
+      </form>
+    </main>
   )
 }
 
