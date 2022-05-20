@@ -1,0 +1,75 @@
+// COLOR VARIABLES
+$base-bg: #fcf5e8;
+$base-bg-alt: #faebd7;
+$base-color: #6c63ff;
+$sec-bg: #d4dedd;
+$light-gray: #ddd;
+// $highlight-color: #f50057;
+$mild-red: #f60e60;
+$mild-red-light: #ff3079;
+$orange-color: #ff4d00;
+$mild-color: #ff6622;
+$pink: #ffc0cb;
+$white: #fff;
+$white-alt: #fafafa;
+$whitesmoke: #f4f4f4;
+$heading-color: #444;
+$text-color: #999;
+$gray: #777;
+$gray-alt: #8a8a8a;
+$mild-gray: #c9c9c9;
+$dark: #222;
+$mild-dark: #333;
+$dark-alt: #555;
+$v-dark: #050505;
+$green: #0ebb50;
+
+.user-list {
+  box-sizing: border-box;
+  width: 250px;
+  min-width: 250px;
+  padding-block: 33px;
+  background: $base-bg-alt;
+  color: $dark;
+
+  .user-list-heading {
+    margin-block: 8px;
+
+    h2 {
+      text-align: right;
+      margin-block-end: 40px;
+      padding-block-end: 30px;
+      padding-inline: 33px;
+      box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+      // border-block-end: 1px solid $gray-alt;
+      font-size: 1.5rem;
+    }
+  }
+
+  .user-list-item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-block: 20px;
+    margin-inline: auto;
+    padding-inline: 33px;
+    font-weight: 500;
+
+    /*online users*/
+    .online-user {
+      display: inline-block;
+      margin-right: 10px;
+      width: 12px;
+      height: 12px;
+      background: $green;
+      border-radius: 50%;
+      margin-top: 2px;
+    }
+
+    .avatar {
+      margin-inline-start: 10px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
