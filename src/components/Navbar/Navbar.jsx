@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom'
 import { useLogout } from '../../hooks/useLogout'
+import { useAuthContext } from '../../hooks/useAuthContext'
 
 // STYLES & IMAGES
 import './Navbar.scss'
-import Logo from '../../assets/taskit_logo.svg'
+import Logo from '../../assets/images/taskit_logo.svg'
 
 const Navbar = () => {
   const { logout, isPending } = useLogout()
+  const { user } = useAuthContext()
 
   const handleLogout = () => {
     logout()
@@ -20,21 +22,26 @@ const Navbar = () => {
           <span>Task:it</span>
         </li>
 
-        <li>
-          <Link to='/login'>Login</Link>
-        </li>
-        <li>
-          <Link to='/signup'>Signup</Link>
-        </li>
-        <li>
-          {!isPending ? (
-            <button className='btn' onClick={handleLogout}>
-              Log Out
-            </button>
-          ) : (
-            <button className='btn'>Logging Out</button>
-          )}
-        </li>
+        {user ? (
+          <li>
+            {isPending ? (
+              <button className='btn'>Logging Out</button>
+            ) : (
+              <button className='btn' onClick={handleLogout}>
+                Log Out
+              </button>
+            )}
+          </li>
+        ) : (
+          <>
+            <li>
+              <Link to='/login'>Login</Link>
+            </li>
+            <li>
+              <Link to='/signup'>Signup</Link>
+            </li>
+          </>
+        )}
       </ul>
     </div>
   )

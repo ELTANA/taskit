@@ -1,32 +1,32 @@
 // COLOR VARIABLES
-$base-bg: #fcf5e8;
-$base-bg-alt: #faebd7;
+// $base-bg: #fcf5e8;
+// $base-bg-alt: #faebd7;
 $base-color: #6c63ff;
-$sec-bg: #d4dedd;
+// $sec-bg: #d4dedd;
 $heading-color: #444;
-$text-color: #999;
-$gray: #777;
-$gray-alt: #8a8a8a;
-$mild-gray: #c9c9c9;
-$light-gray: #ddd;
+// $text-color: #999;
+// $gray: #777;
+// $gray-alt: #8a8a8a;
+// $mild-gray: #c9c9c9;
+// $light-gray: #ddd;
 // $highlight-color: #f50057;
-$mild-red: #f60e60;
-$mild-red-light: #ff3079;
-$orange-color: #ff4d00;
-$mild-color: #ff6622;
-$pink: #ffc0cb;
-$white: #fff;
-$white-alt: #fafafa;
-$whitesmoke: #f4f4f4;
-$dark: #333;
+// $mild-red: #f60e60;
+// $mild-red-light: #ff3079;
+// $pink: #ffc0cb;
+// $white: #fff;
+// $white-alt: #fafafa;
+// $whitesmoke: #f4f4f4;
+// $dark: #333;
 $dark-alt: #333;
-$v-dark: #050505;
+// $v-dark: #050505;
 
 .navbar {
   width: 100%;
-  padding: 30px 0;
+  padding: 32px 0;
   box-sizing: border-box;
   margin-bottom: 80px;
+  padding-inline: 60px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
 .navbar ul {

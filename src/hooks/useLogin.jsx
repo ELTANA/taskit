@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { taskitAuth } from '../firebase/config'
+import { taskitAuth, taskitFirestore } from '../firebase/config'
 import { useAuthContext } from './useAuthContext'
 
 export const useLogin = () => {
@@ -16,17 +16,24 @@ export const useLogin = () => {
       // login
       const res = await taskitAuth.signInWithEmailAndPassword(email, password)
 
-      // dispatch login action
-      dispatch({ type: 'LOGIN', payload: res.user })
+      if (res) {
+        // Update Online Status on Login
+        await taskitFirestore.collection('users').doc(res.user.uid).update({
+          online: true
+        })
 
-      if (!isCancelled) {
-        setIsPending(false)
-        setError(null)
+        // dispatch login action
+        dispatch({ type: 'LOGIN', payload: res.user })
+
+        if (!isCancelled) {
+          setIsPending(false)
+          setError(null)
+        }
       }
     } catch (err) {
       if (!isCancelled) {
-        setError(err.message)
         setIsPending(false)
+        return setError(err.message)
       }
     }
   }
