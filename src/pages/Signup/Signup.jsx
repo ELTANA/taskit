@@ -6,7 +6,7 @@ import { useSignup } from '../../hooks/useSignup'
 // import { SpinnerCircularFixed } from 'spinners-react'
 
 // STYLES
-import './SignUp.scss'
+import './Signup.scss'
 
 const SignUp = () => {
   const [email, setEmail] = useState('')
