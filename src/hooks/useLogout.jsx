@@ -1,18 +1,24 @@
 import { useEffect, useState } from 'react'
-import { taskitAuth } from '../firebase/config'
+import { taskitAuth, taskitFirestore } from '../firebase/config'
 import { useAuthContext } from './useAuthContext'
 
 export const useLogout = () => {
   const [isCancelled, setIsCancelled] = useState(false)
   const [error, setError] = useState(null)
   const [isPending, setIsPending] = useState(false)
-  const { dispatch } = useAuthContext()
+  const { dispatch, user } = useAuthContext()
 
   const logout = async () => {
     setError(null)
     setIsPending(true)
 
     try {
+      // Update Online Presence on Logout
+      const { uid } = user
+      await taskitFirestore.collection('users').doc(uid).update({
+        online: false
+      })
+
       // sign the user out
       await taskitAuth.signOut()
 
