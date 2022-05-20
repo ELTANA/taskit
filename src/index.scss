@@ -5,23 +5,24 @@ $base-bg: #fcf5e8;
 $base-bg-alt: #faebd7;
 $base-color: #6c63ff;
 $sec-bg: #d4dedd;
-$heading-color: #444;
-$text-color: #999;
-$gray: #777;
-$gray-alt: #8a8a8a;
-$mild-gray: #c9c9c9;
 $light-gray: #ddd;
-$highlight-color: #f60e60;
-$mild-red: #f50057;
-$mild-red-dark: #d13267;
+// $highlight-color: #f50057;
+$mild-red: #f60e60;
+$mild-red-light: #ff3079;
 $orange-color: #ff4d00;
 $mild-color: #ff6622;
 $pink: #ffc0cb;
 $white: #fff;
 $white-alt: #fafafa;
 $whitesmoke: #f4f4f4;
-$dark: #333;
-$dark-alt: #333;
+$heading-color: #444;
+$text-color: #999;
+$gray: #777;
+$gray-alt: #8a8a8a;
+$mild-gray: #c9c9c9;
+$dark: #222;
+$mild-dark: #333;
+$dark-alt: #555;
 $v-dark: #050505;
 
 // BASE STYLES
@@ -58,8 +59,10 @@ ul {
   cursor: pointer;
   border: 1.5px solid $mild-red;
   border-radius: 4px;
-  background: $whitesmoke;
-  color: $mild-red;
+  background: $mild-red;
+  color: $whitesmoke;
+  // background: $whitesmoke;
+  // color: $mild-red;
   font-size: 1.2rem;
   font-weight: 300;
   padding-block: 8px;
@@ -67,8 +70,10 @@ ul {
   animation: all 700ms ease-in;
 
   &:hover {
-    color: $whitesmoke;
-    background: $mild-red;
+    background: $mild-red-light;
+    color: $white;
+    // color: $whitesmoke;
+    // background: $mild-red;
   }
 }
 
@@ -98,13 +103,17 @@ label {
     min-height: 160px;
   }
 
+  .file-input {
+    margin-block-end: 10px;
+  }
+
   .error {
     color: $mild-red;
     background: $pink;
     border: 1px solid $mild-red;
     border-radius: 4px;
     padding: 8px;
-    margin-block: 10px;
+    margin-block: 16px;
     margin-inline: 0;
   }
 }

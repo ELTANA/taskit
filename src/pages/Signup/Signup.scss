@@ -1,0 +1,71 @@
+// COLOR VARIABLES
+$white: #fff;
+$whitesmoke: #f4f4f4;
+$mild-gray: #c9c9c9;
+$dark-alt: #555;
+$mild-red: #f60e60;
+$base-color: #6c63ff;
+
+.auth-form {
+  max-width: 360px;
+  margin-block: 60px;
+  margin-inline: auto;
+  padding-block: 3.2rem;
+  padding-inline: 40px;
+  border-radius: 15px;
+  background: $whitesmoke;
+  color: $dark-alt;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+  h2 {
+    color: $base-color;
+    text-align: center;
+  }
+
+  input {
+    text-indent: 0.2rem;
+    background: $white;
+    color: $dark-alt;
+    border: 1px solid $mild-gray;
+
+    &::-webkit-file-upload-button {
+      color: $whitesmoke;
+      border: 1px solid $base-color;
+      background: $base-color;
+      border-radius: 15px;
+      padding-inline: 15px;
+    }
+
+    &:focus {
+      &:valid {
+        border: none;
+        outline: 1px solid $base-color;
+      }
+
+      &:invalid {
+        border: none;
+        outline: 1px solid $mild-red;
+      }
+    }
+  }
+
+  button {
+    background: $base-color;
+    color: $white;
+    margin-block-start: 0.5rem;
+    width: 100%;
+    border: 1px solid $base-color;
+    animation: all 700ms ease-in;
+
+    &:disabled {
+      opacity: 0.6;
+    }
+
+    &:hover {
+      color: $whitesmoke;
+      border: 1px solid $mild-red;
+      background: $mild-red;
+    }
+  }
+}

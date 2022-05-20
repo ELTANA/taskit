@@ -4,9 +4,9 @@ $base-bg-alt: #faebd7;
 $base-color: #6c63ff;
 $sec-bg: #d4dedd;
 $light-gray: #ddd;
-$highlight-color: #f60e60;
-$mild-red: #f50057;
-$mild-red-dark: #d13267;
+// $highlight-color: #f50057;
+$mild-red: #f60e60;
+$mild-red-light: #ff3079;
 $orange-color: #ff4d00;
 $mild-color: #ff6622;
 $pink: #ffc0cb;
@@ -53,28 +53,28 @@ $v-dark: #050505;
 
     li {
       margin-top: 10px;
-    }
 
-    a {
-      display: flex;
-      padding: 10px;
-      text-decoration: none;
-      width: 100%;
-      color: $white;
-      box-sizing: border-box;
-
-      img {
-        margin-right: 10px;
-        filter: invert(100%);
-      }
-
-      &.active {
-        color: $gray;
-        background: $base-bg;
-        border-radius: 20px 0 0 20px;
+      a {
+        display: flex;
+        padding: 10px;
+        text-decoration: none;
+        width: 100%;
+        color: $white;
+        box-sizing: border-box;
 
         img {
-          filter: invert(40%);
+          margin-inline: 10px;
+          filter: invert(100%);
+        }
+
+        &.active {
+          color: $dark;
+          background: $base-bg;
+          border-radius: 20px 0 0 20px;
+
+          img {
+            filter: invert(40%);
+          }
         }
       }
     }

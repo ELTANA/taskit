@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { taskitAuth } from '../firebase/config'
+import { taskitAuth, taskitStorage, taskitFirestore } from '../firebase/config'
 import { useAuthContext } from './useAuthContext'
 
 export const useSignup = () => {
@@ -8,7 +8,7 @@ export const useSignup = () => {
   const [isPending, setIsPending] = useState(false)
   const { dispatch } = useAuthContext()
 
-  const signup = async (email, password, displayName) => {
+  const signup = async (email, password, displayName, avatar) => {
     setError(null)
     setIsPending(true)
 
@@ -17,18 +17,32 @@ export const useSignup = () => {
       const res = await taskitAuth.createUserWithEmailAndPassword(email, password)
 
       if (!res) {
-        throw new Error('Could not complete signup')
+        throw new Error('Could not complete sign up')
       }
 
-      // add display name to user
-      await res.user.updateProfile({ displayName })
+      if (res) {
+        // Upload User Avatar
+        const uploadPath = `avatars/${res.user.uid}/${avatar.name}`
+        const userAvatar = await taskitStorage.ref(uploadPath).put(avatar)
+        const userAvatarUrl = await userAvatar.ref.getDownloadURL()
 
-      // dispatch login action
-      dispatch({ type: 'LOGIN', payload: res.user })
+        // add display name & Image URL to user
+        await res.user.updateProfile({ displayName, photoURL: userAvatarUrl })
 
-      if (!isCancelled) {
-        setIsPending(false)
-        setError(null)
+        // Create User Document
+        await taskitFirestore.collection('users').doc(res.user.uid).set({
+          online: true,
+          displayName,
+          photoURL: userAvatarUrl
+        })
+
+        // dispatch login action
+        dispatch({ type: 'LOGIN', payload: res.user })
+
+        if (!isCancelled) {
+          setIsPending(false)
+          setError(null)
+        }
       }
     } catch (err) {
       if (!isCancelled) {

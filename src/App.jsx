@@ -7,10 +7,10 @@ import './App.scss'
 import Dashboard from './pages/Dashboard/Dashboard'
 import Create from './pages/Create/Create'
 import Login from './pages/Login/Login'
-import Signup from './pages/Signup/Signup'
+import SignUp from './pages/SignUp/SignUp'
 import Projects from './pages/Projects/Projects'
 import Navbar from './components/Navbar/Navbar'
-import Sidebar from './components/SIdebar/Sidebar'
+import Sidebar from './components/Sidebar/Sidebar'
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
             <Route path='/create' element={<Create />} />
             <Route path='/projects/:id' element={<Projects />} />
             <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<Signup />} />
+            <Route path='/signup' element={<SignUp />} />
           </Routes>
         </article>
       </BrowserRouter>
