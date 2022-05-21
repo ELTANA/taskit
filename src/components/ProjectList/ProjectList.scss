@@ -1,0 +1,82 @@
+// COLOR VARIABLES
+$base-bg: #fcf5e8;
+$base-bg-alt: #faebd7;
+$base-color: #6c63ff;
+$sec-bg: #d4dedd;
+$light-gray: #ddd;
+$mild-red: #f60e60;
+$mild-red-light: #ff3079;
+$orange-color: #ff4d00;
+$mild-color: #ff6622;
+$pink: #ffc0cb;
+$white: #fff;
+$white-alt: #fafafa;
+$whitesmoke: #f4f4f4;
+$heading-color: #444;
+$text-color: #999;
+$gray: #777;
+$gray-alt: #8a8a8a;
+$mild-gray: #c9c9c9;
+$dark: #333;
+$dark-alt: #555;
+$v-dark: #050505;
+
+.project-list {
+  margin-block-start: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 20px;
+
+  a {
+    background-color: $white;
+    text-decoration: none;
+    color: inherit;
+    padding-block: 20px 10px;
+    padding-inline: 24px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    // box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    //   rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+    h4 {
+      color: $heading-color;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    p {
+      color: $dark;
+      font-size: 0.9em;
+    }
+
+    .assigned-to {
+      margin-block-start: 20px;
+      padding-block-start: 10px;
+      border-block-start: 1px solid $light-gray;
+
+      ul {
+        margin-block: 10px;
+        margin-inline: 0;
+        display: flex;
+        justify-content: flex-end;
+
+        small {
+          margin-inline-end: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+        }
+
+        li {
+          margin-inline-end: 10px;
+
+          .avatar {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+}

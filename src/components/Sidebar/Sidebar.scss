@@ -23,8 +23,8 @@ $dark-alt: #555;
 $v-dark: #050505;
 
 .sidebar {
-  width: 300px;
-  min-width: 300px;
+  width: 250px;
+  min-width: 250px;
   background: $gray;
   color: $white;
   min-height: 100vh;
@@ -34,6 +34,7 @@ $v-dark: #050505;
   .sidebar-content {
     position: fixed;
     width: inherit;
+    z-index: 2;
 
     .user {
       font-weight: bold;

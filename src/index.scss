@@ -29,7 +29,7 @@ $v-dark: #050505;
 body {
   font-family: Poppins, sans-serif;
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   background: $base-bg;
 }
 
@@ -92,62 +92,62 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  form {
-    .error {
+form {
+  .error {
+    color: $mild-red;
+    background: $pink;
+    border: 1px solid $mild-red;
+    border-radius: 4px;
+    padding: 8px;
+    margin-block: 16px;
+    margin-inline: 0;
+  }
+
+  .small {
+    color: $dark;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-block: 0.8rem;
+
+    a {
+      margin-inline-start: 0.5rem;
+      text-decoration: none;
       color: $mild-red;
-      background: $pink;
-      border: 1px solid $mild-red;
-      border-radius: 4px;
-      padding: 8px;
-      margin-block: 16px;
-      margin-inline: 0;
+      font-weight: 700;
     }
+  }
 
-    .small {
-      color: $dark;
-      display: flex;
-      align-content: center;
-      justify-content: center;
-      align-items: center;
-      margin-block: 0.8rem;
+  label {
+    display: block;
+    margin-block: 24px;
+    margin-inline: auto;
 
-      a {
-        margin-inline-start: 0.5rem;
-        text-decoration: none;
-        color: $mild-red;
-        font-weight: 700;
-      }
-    }
-
-    label {
+    label span {
       display: block;
-      margin-block: 24px;
-      margin-inline: auto;
+      margin-block-end: 6px;
+    }
 
-      label span {
-        display: block;
-        margin-block-end: 6px;
-      }
+    input,
+    textarea {
+      padding: 8px 6px;
+      font-size: 1em;
+      color: $gray;
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid $light-gray;
+      border-radius: 4px;
+    }
 
-      input,
-      textarea {
-        padding: 8px 6px;
-        font-size: 1em;
-        color: $gray;
-        width: 100%;
-        box-sizing: border-box;
-        border: 1px solid $light-gray;
-        border-radius: 4px;
-      }
+    textarea {
+      min-height: 160px;
+    }
 
-      textarea {
-        min-height: 160px;
-      }
-
-      .file-input {
-        margin-block-end: 10px;
-      }
+    .file-input {
+      margin-block-end: 10px;
     }
   }
 }
