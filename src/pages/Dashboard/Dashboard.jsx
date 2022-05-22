@@ -14,7 +14,7 @@ const Dashboard = () => {
   return (
     <div className='dashboard'>
       <section className='dashboard-content'>
-        <h2 className='page-title'>Dashboard</h2>
+        <h1 className='page-title'>Dashboard</h1>
         {error && <small className='error'>{error}</small>}
 
         {documents && <ProjectList projects={documents} />}

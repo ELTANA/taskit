@@ -1,0 +1,68 @@
+// COLOR VARIABLES
+// $base-bg: #fcf5e8;
+// $base-bg-alt: #faebd7;
+// $base-color: #6c63ff;
+// $sec-bg: #d4dedd;
+// $light-gray: #ddd;
+// $mild-red: #f60e60;
+// $mild-red-light: #ff3079;
+// $orange-color: #ff4d00;
+// $mild-color: #ff6622;
+// $pink: #ffc0cb;
+$white: #fff;
+// $white-alt: #fafafa;
+// $whitesmoke: #f4f4f4;
+$heading-color: #444;
+// $text-color: #999;
+// $gray: #777;
+// $gray-alt: #8a8a8a;
+// $mild-gray: #c9c9c9;
+$dark: #333;
+// $dark-alt: #555;
+// $v-dark: #050505;
+
+.project-details {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  align-items: start;
+  grid-gap: 60px;
+}
+
+/* project summary */
+.project-summary {
+  background-color: $white;
+  padding: 30px;
+  border-radius: 4px;
+
+  .due-date {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    color: $heading-color;
+  }
+
+  .details {
+    margin-block: 30px;
+    margin-inline: 0;
+    color: $dark;
+    line-height: 1.8em;
+    font-size: 0.9rem;
+  }
+
+  h4 {
+    color: $dark;
+    font-size: 0.9rem;
+  }
+
+  .assigned-users {
+    display: flex;
+    margin-block-start: 20px;
+
+    .avatar {
+      margin-inline-end: 10px;
+    }
+
+    + .btn {
+      margin-block-start: 20px;
+    }
+  }
+}

@@ -1,18 +1,35 @@
-import Navbar from '../../components/Navbar/Navbar'
-import Sidebar from '../../components/Sidebar/Sidebar'
+import { useParams } from 'react-router-dom'
+import useDocument from '../../hooks/useDocument'
+
+// COMPONENTS
+import ProjectSummary from './ProjectSummary'
 
 // STYLES
 import './Projects.scss'
 
 const Project = () => {
+  const { id } = useParams()
+  const { document, error } = useDocument('projects', id)
+  // console.log(document)
+
+  if (error) {
+    return <small className='error'>{error}</small>
+  }
+
+  if (!document) {
+    return (
+      <div className='loading'>
+        <p>Loading...</p>
+      </div>
+    )
+  }
+
   return (
-    <>
-      <Sidebar />
-      <article className='wrapper'>
-        <Navbar />
-        <section>Projects</section>
-      </article>
-    </>
+    // <div className='project'>
+    <section className='project-details'>
+      <ProjectSummary project={document} />
+    </section>
+    // </div>
   )
 }
 
