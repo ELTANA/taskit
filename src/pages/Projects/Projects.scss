@@ -26,43 +26,53 @@ $dark: #333;
   grid-template-columns: 3fr 2fr;
   align-items: start;
   grid-gap: 60px;
-}
 
-/* project summary */
-.project-summary {
-  background-color: $white;
-  padding: 30px;
-  border-radius: 4px;
+  /* project summary */
+  .project-summary {
+    background-color: $white;
+    padding: 30px;
+    border-radius: 4px;
 
-  .due-date {
-    margin: 10px 0;
-    font-size: 0.9rem;
-    color: $heading-color;
-  }
-
-  .details {
-    margin-block: 30px;
-    margin-inline: 0;
-    color: $dark;
-    line-height: 1.8em;
-    font-size: 0.9rem;
-  }
-
-  h4 {
-    color: $dark;
-    font-size: 0.9rem;
-  }
-
-  .assigned-users {
-    display: flex;
-    margin-block-start: 20px;
-
-    .avatar {
-      margin-inline-end: 10px;
+    .due-date {
+      margin: 10px 0;
+      font-size: 0.9rem;
+      color: $heading-color;
     }
 
-    + .btn {
+    .details {
+      margin-block: 30px;
+      margin-inline: 0;
+      color: $dark;
+      line-height: 1.8em;
+      font-size: 0.9rem;
+    }
+
+    h4 {
+      color: $dark;
+      font-size: 0.9rem;
+    }
+
+    .assigned-users {
+      display: flex;
       margin-block-start: 20px;
+
+      .avatar {
+        margin-inline-end: 10px;
+      }
+
+      + .btn {
+        margin-block-start: 20px;
+      }
+    }
+  }
+
+  /*project comments*/
+  .project-comments label {
+    margin-bottom: 0px;
+
+    textarea {
+      min-height: 60px;
+      font-size: 1.1rem;
     }
   }
 }

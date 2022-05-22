@@ -6,6 +6,7 @@ import ProjectSummary from './ProjectSummary'
 
 // STYLES
 import './Projects.scss'
+import ProjectComments from './ProjectComments'
 
 const Project = () => {
   const { id } = useParams()
@@ -25,11 +26,10 @@ const Project = () => {
   }
 
   return (
-    // <div className='project'>
     <section className='project-details'>
       <ProjectSummary project={document} />
+      <ProjectComments />
     </section>
-    // </div>
   )
 }
 

@@ -8,22 +8,20 @@ import './Projects.scss'
 
 const ProjectSummary = ({ project }) => {
   return (
-    <div>
-      <div className='project-summary'>
-        <h2 className='page-title'>{project.name}</h2>
-        <p className='due-date'>
-          <span>project due by:</span> {project.dueDate.toDate().toDateString()}
-        </p>
-        <p className='details'>{project.details}</p>
-        <div className='users'>
-          <h4>Project is assigned to:</h4>
-          <div className='assigned-users'>
-            {project.assignedUsersList.map((user) => (
-              <div key={user.id}>
-                <Avatar src={user.photoURL} />
-              </div>
-            ))}
-          </div>
+    <div className='project-summary'>
+      <h2 className='page-title'>{project.name}</h2>
+      <p className='due-date'>
+        <span>project due by:</span> {project.dueDate.toDate().toDateString()}
+      </p>
+      <p className='details'>{project.details}</p>
+      <div className='users'>
+        <h4>Project is assigned to:</h4>
+        <div className='assigned-users'>
+          {project.assignedUsersList.map((user) => (
+            <div key={user.id}>
+              <Avatar src={user.photoURL} />
+            </div>
+          ))}
         </div>
       </div>
     </div>
