@@ -1,69 +1,43 @@
 // COLOR VARIABLES
-// $base-bg: #fcf5e8;
-// $base-bg-alt: #faebd7;
-$base-color: #6c63ff;
-// $sec-bg: #d4dedd;
-$heading-color: #444;
-// $text-color: #999;
-// $gray: #777;
-// $gray-alt: #8a8a8a;
+$base-color: #203757;
 $mild-gray: #c9c9c9;
-// $light-gray: #ddd;
-// $highlight-color: #f50057;
-// $mild-red: #f60e60;
-// $mild-red-light: #ff3079;
-// $pink: #ffc0cb;
-// $white: #fff;
-// $white-alt: #fafafa;
-// $whitesmoke: #f4f4f4;
-// $dark: #333;
-$dark-alt: #333;
-// $v-dark: #050505;
+$mild-red: #f60e60;
+$mild-red-light: #ff3079;
+$white: #fff;
+$whitesmoke: #f4f4f4;
 
-.navbar {
+.nav-bar {
   width: 100%;
-  padding: 32px 0;
-  box-sizing: border-box;
-  margin-bottom: 80px;
-  padding-inline: 60px;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-  background: $mild-gray;
+  display: grid;
+  padding-inline: 5%;
   position: sticky;
   top: 0;
 
-  ul {
-    display: flex;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  .logo {
-    font-weight: bold;
-    color: $heading-color;
-    letter-spacing: 1px;
+  & > ul {
+    margin-block-end: 0;
     display: flex;
     align-items: center;
-    margin-right: auto;
-  }
+    justify-content: space-between;
 
-  .logo img {
-    margin-right: 10px;
-    filter: invert(25%);
-    width: 36px;
-    // margin-top: -8px;
-  }
+    .logo {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
 
-  a {
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: $dark-alt;
-    text-decoration: none;
-    margin-right: 20px;
-    animation: all 700ms ease-in;
+      img {
+        max-width: 2.5rem;
+        margin-inline-end: 5px;
+        // filter: invert(25%);
+      }
 
-    &:hover {
-      color: $base-color;
+      span {
+        font-size: 1.5rem;
+        font-weight: bolder;
+        color: $base-color;
+        letter-spacing: 1px;
+        margin-block-end: 0.4rem;
+      }
     }
   }
 }

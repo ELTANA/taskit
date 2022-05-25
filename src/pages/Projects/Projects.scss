@@ -1,10 +1,10 @@
 // COLOR VARIABLES
 // $base-bg: #fcf5e8;
 // $base-bg-alt: #faebd7;
-// $base-color: #6c63ff;
+$base-color: #6c63ff;
 // $sec-bg: #d4dedd;
 // $light-gray: #ddd;
-// $mild-red: #f60e60;
+$mild-red: #f60e60;
 // $mild-red-light: #ff3079;
 // $orange-color: #ff4d00;
 // $mild-color: #ff6622;
@@ -14,65 +14,88 @@ $white: #fff;
 // $whitesmoke: #f4f4f4;
 $heading-color: #444;
 // $text-color: #999;
-// $gray: #777;
-// $gray-alt: #8a8a8a;
-// $mild-gray: #c9c9c9;
+$gray: #777;
+$gray-alt: #8a8a8a;
+$mild-gray: #c9c9c9;
 $dark: #333;
 // $dark-alt: #555;
 // $v-dark: #050505;
 
 .project-details {
+  width: minmax(300px, 80%);
+  // max-width: 80%;
+  // min-width: 600px;
+  // display: flex;
+  // flex-direction: column;
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1fr;
+  // grid-template-columns: 3fr 2fr;
   align-items: start;
-  grid-gap: 60px;
+  // row-gap: 20px;
 
   /* project summary */
   .project-summary {
     background-color: $white;
-    padding: 30px;
+    padding-block: 30px 20px;
+    padding-inline: 20px;
     border-radius: 4px;
 
+    .page-title {
+      width: 100%;
+      font-size: 1.3rem;
+      // margin-bottom: 20px;
+    }
+
     .due-date {
-      margin: 10px 0;
+      // margin: 10px 0;
       font-size: 0.9rem;
+      line-height: 2rem;
+      font-weight: 500;
       color: $heading-color;
+      border-block-end: 1px solid $mild-gray;
+
+      span {
+        color: $mild-red;
+      }
     }
 
     .details {
-      margin-block: 30px;
-      margin-inline: 0;
+      margin-block: 20px;
+      margin-inline: 1rem;
       color: $dark;
       line-height: 1.8em;
-      font-size: 0.9rem;
+      font-size: 1rem;
+      font-weight: 500;
+      font-style: italic;
     }
 
-    h4 {
-      color: $dark;
-      font-size: 0.9rem;
-    }
-
-    .assigned-users {
+    .activity {
       display: flex;
-      margin-block-start: 20px;
+      justify-content: space-between;
 
-      .avatar {
-        margin-inline-end: 10px;
+      .comments-btn {
+        display: flex;
+        align-items: flex-end;
       }
 
-      + .btn {
-        margin-block-start: 20px;
+      .assigned-users {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        h4 {
+          color: $base-color;
+          font-size: 0.9rem;
+        }
+
+        .users {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+        }
       }
-    }
-  }
-
-  /*project comments*/
-  .project-comments label {
-    margin-bottom: 0px;
-
-    textarea {
-      min-height: 60px;
-      font-size: 1.1rem;
     }
   }
 }

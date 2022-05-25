@@ -1,9 +1,72 @@
+// COLOR VARIABLES
+$base-bg: #fcf5e8;
+$base-color: #203757;
+$white: #fff;
+$gray: #777;
+// $dark: #333;
+// $mild-gray: #c9c9c9;
+// $mild-red: #f60e60;
+// $mild-red-light: #ff3079;
+// $midnight: #0c1a54;
+
 .App {
   display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .nav-bar {
+    min-height: 10vh;
+    background: #e8e3cc;
+    z-index: 2;
+  }
+
+  .wrapper {
+    width: 100%;
+    min-height: 90vh;
+    background: $base-bg;
+    color: $base-color;
+    display: flex;
+
+    .sidebar {
+      z-index: 1;
+      width: 250px;
+      background: $gray;
+      color: $white;
+      min-height: 100%;
+      position: relative;
+      transition: all 500ms ease-in;
+
+      &.sidebar_closed {
+        width: 100px;
+      }
+    }
+
+    .dashboard {
+      flex: 1 1 0%;
+    }
+  }
 }
 
-.App .wrapper {
-  flex-grow: 1;
-  padding-block: 0;
-  // padding-inline: 60px;
+// MEDIA QUERY FOR 550px & SMALLER SCREENS
+@media only screen and (max-width: 550px) {
+  .App {
+    .wrapper {
+      .sidebar {
+        width: 250px;
+        position: fixed;
+        transition: all 500ms ease-in;
+
+        &.sidebar_closed {
+          width: 70px;
+        }
+      }
+
+      .dashboard {
+        flex: 1 1 0%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+    }
+  }
 }

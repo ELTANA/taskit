@@ -151,6 +151,7 @@ const Create = () => {
 
           <label htmlFor='assignee'>
             <Select
+              className='select'
               closeMenuOnSelect={true}
               components={animatedComponents}
               isMulti
@@ -159,7 +160,7 @@ const Create = () => {
             />
           </label>
 
-          <button className='btn'>Add Project</button>
+          <button className='btnn'>Add Project</button>
         </form>
       </section>
     </div>

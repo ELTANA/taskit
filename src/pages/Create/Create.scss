@@ -1,5 +1,5 @@
 .create {
-  width: 100%;
+  // width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,6 +7,7 @@
   .create-form {
     max-width: 600px;
     width: 600px;
+    font-size: 1.1rem !important;
 
     .page-title {
       width: 100%;
@@ -14,13 +15,24 @@
       text-align: center;
     }
 
-    input,
-    textarea,
-    .btn {
-      padding: 0.8rem;
+    .css-6j8wv5-Input {
+      padding-block: 0.5rem;
     }
 
-    .btn {
+    label {
+      input,
+      textarea {
+        margin-block-start: 0.2rem;
+      }
+    }
+
+    input,
+    textarea,
+    .btnn {
+      padding: 0.5rem;
+    }
+
+    .btnn {
       width: 100%;
     }
   }
