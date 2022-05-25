@@ -1,3 +1,3 @@
-# Tasky App
+# Task:it App
 
-## An App to manage Employees Tasks
+## A web App to manage Employees Tasks
